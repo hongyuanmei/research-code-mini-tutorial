@@ -15,7 +15,8 @@ def main():
     test_loader = load_data(data_path, 'test', batch_size)
 
     # load the saved model 
-    mymodel = load_model(MLP, data_path, f'BS={batch_size}')
+    model_path = '../../logs/gaussian'
+    mymodel = load_model(MLP, model_path, f'BS={batch_size}')
     
     myclassifier = Classifier(mymodel)
     myclassifier.test(test_loader)

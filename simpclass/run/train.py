@@ -20,8 +20,8 @@ def main():
     myclassifier.train(train_loader, dev_loader)
 
     # save the trained model 
-
-    save_model(mymodel, data_path, f'BS={batch_size}')
+    save_path = '../../logs/gaussian'
+    save_model(mymodel, save_path, f'BS={batch_size}')
 
 
 if __name__ == "__main__": main()

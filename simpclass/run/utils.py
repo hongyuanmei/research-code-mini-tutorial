@@ -13,10 +13,10 @@ def load_data(data_path, split, batch_size):
     data_loader = DataLoader(dataset, batch_size)
     return data_loader
 
-def save_model(model, data_path, attr): 
-    torch.save(model.state_dict(), f'{data_path}/model-{attr}.pt')
+def save_model(model, model_path, attr): 
+    torch.save(model.state_dict(), f'{model_path}/model-{attr}.pt')
 
-def load_model(model_class, data_path, attr): 
+def load_model(model_class, model_path, attr): 
     model = model_class()
-    model.load_state_dict(torch.load(f'{data_path}/model-{attr}.pt'))
+    model.load_state_dict(torch.load(f'{model_path}/model-{attr}.pt'))
     return model
